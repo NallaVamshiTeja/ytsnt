@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Youtube Summarization and translation</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      body {
+        width: 400px;
+        background-color: black;
+        color: aliceblue;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+      }
+      .custom-btn {
+        width: max-content;
+        padding: 10px;
+        font-size: large;
+        margin: auto;
+        display: block;
+        border-radius: 8px;
+      }
+
+      .custom-btn-primary {
+        background-color: #007bff; /* Bootstrap primary color */
+        color: white;
+        border: 1px solid #007bff; /* Bootstrap primary color */
+      }
+
+      .custom-btn-primary:disabled {
+        background-color: #b3c6e7; /* Adjusted disabled color */
+        color: white;
+        border: 1px solid #b3c6e7; /* Adjusted disabled color */
+      }
+
+      p {
+        font-size: medium;
+        overflow-x: hidden;
+      }
+      .languageDiv {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+      .slider-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      h1 {
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .slider {
+        width: 80%;
+      }
+      .slider-labels {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Youtube video Summarization and translation</h1>
+    <div class="languageDiv">
+      <p>Select language:</p>
+      <select id="languageSelect">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="te">Telugu</option>
+        <option value="ta">Tamil</option>
+        <option value="kn">Kannada</option>
+      </select>
+    </div>
+    <div class="slider-container">
+      <p>Summary length:</p>
+      <input
+        type="range"
+        min="0"
+        max="2"
+        value="1"
+        class="slider"
+        id="mySlider"
+      />
+      <div class="slider-labels">
+        <span class="label">Small</span>
+        <span class="label">Medium</span>
+        <span class="label">Large</span>
+      </div>
+    </div>
+    <button id="summarise" class="custom-btn custom-btn-primary" type="button">
+      Summarise
+    </button>
+    <br />
+
+    <p id="output"></p>
+    <script src="popup.js"></script>
+  </body>
+</html>
